@@ -1,0 +1,10 @@
+.infoContainer, .titleContainer, .subtitleContainer,
+.donorBloodContainer, .recipientBloodContainer, .infoFooter
+{position: relative; width: 100vw;}
+
+.infoContainer {height: 5vh;}
+.titleContainer {height: 20vh;}
+.subtitleContainer {height: 15vh;}
+.donorBloodContainer {height: 25vh;}
+.recipientBloodContainer {height: 25vh;}
+.infoFooter {height: 10vh;}
