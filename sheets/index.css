@@ -1,10 +1,107 @@
 .infoContainer, .titleContainer, .subtitleContainer,
-.donorBloodContainer, .recipientBloodContainer, .infoFooter
+.bloodContainer, .infoFooter
 {position: relative; width: 100vw;}
 
 .infoContainer {height: 5vh;}
 .titleContainer {height: 20vh;}
 .subtitleContainer {height: 15vh;}
-.donorBloodContainer {height: 25vh;}
-.recipientBloodContainer {height: 25vh;}
+.bloodTypeContainer {height: 25vh;}
 .infoFooter {height: 10vh;}
+
+.infoContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.infoButton {
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+
+    right: 1em;
+    text-align: center;
+}
+.infoButton:hover {
+    background-color: var(--highlight);
+}
+
+.titleContainer, .subtitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloodTypeContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bloodBag {
+    display: inline-block;
+    height: 20vh;
+    width: auto;
+    aspect-ratio: 4/5;
+
+    border: solid;
+    border-radius: 0.5em;
+    border-width: 0.3em;
+    border-color: var(--accent2);
+}
+
+.bloodContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.bloodContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 92%;
+    border-radius: 0.5em;
+    background-color: var(--accent2);
+}
+
+.bloodLabel {
+    width: 75%;
+    height: 65%;
+    background-color: var(--foreground);
+}
+
+.bloodLabelText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    height: 50%;
+    width: 100%;
+
+    color: var(--background);
+    font-weight: bold;
+}
+
+.decorTextLines {
+    position: relative;
+    height: 50%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.decorText {
+    background-color: var(--background);
+    border-radius: 0.2em;
+    height: 0.4em;
+    width: 80%;
+}
