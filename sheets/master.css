@@ -33,8 +33,7 @@ time, mark, audio, video {
     --foreground: #f6f5f4;
     --highlight: #c0bfbc;
     --disabled: #5e5c64;
-    --accent1: #c01c28;
-    --accent2: #a51d2d;
+    --accent: #a51d2d;
 }
 
 body {
@@ -51,11 +50,8 @@ body {
     background-color: var(--background);
 }
 
-.accented1 {
-    color: var(--accent1);
-}
-.accented2 {
-    color: var(--accent2);
+.accented {
+    color: var(--accent);
 }
 
 .viewport {height: 100vh; width: 100vw;}

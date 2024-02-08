@@ -20,10 +20,20 @@
     display: inline-block;
     border: none;
 
-    right: 1em;
+    right: 0.5em;
+    top: 0.5em;
+    height: 3.5vh;
+    width: auto;
+    aspect-ratio: 1/1;
     text-align: center;
+    font-weight: bold;
+
+    border-radius: 100%;
+    color: var(--foreground);
+    background-color: var(--accent);
 }
 .infoButton:hover {
+    color: var(--background);
     background-color: var(--highlight);
 }
 
@@ -48,7 +58,7 @@
     border: solid;
     border-radius: 0.5em;
     border-width: 0.3em;
-    border-color: var(--accent2);
+    border-color: var(--accent);
 }
 
 .bloodContentContainer {
@@ -66,7 +76,7 @@
     width: 90%;
     height: 92%;
     border-radius: 0.5em;
-    background-color: var(--accent2);
+    background-color: var(--accent);
 }
 
 .bloodLabel {
