@@ -61,6 +61,17 @@
     border-color: var(--accent);
 }
 
+.bloodBag:hover {
+    .bloodLabel {
+        background-color: var(--highlight);
+    }
+    background-color: var(--highlight);
+    cursor:
+        url("../assets/graphics/blood_syringe_32x32.svg"),
+        url("../assets/graphics/blood_syringe_32x32.png"),
+        pointer;
+}
+
 .bloodContentContainer {
     display: flex;
     justify-content: center;
@@ -88,13 +99,15 @@
 .bloodLabelText {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     position: relative;
     height: 50%;
     width: 100%;
 
     color: var(--background);
+
+    font-size: 175%;
     font-weight: bold;
 }
 

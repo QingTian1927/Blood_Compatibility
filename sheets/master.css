@@ -20,13 +20,7 @@ time, mark, audio, video {
 }
 /* Reset all elements */
 
-@font-face {
-    font-family: "Noto Sans JP";
-    src: url("/assets/fonts/NotoSansJP-Regular.otf");
-    font-display: swap;
-}
-
-.sans-serif {font-family: "Noto Sans JP", sans-serif;}
+.sans-serif {font-family: sans-serif;}
 
 :root {
     --background: #241f31;
