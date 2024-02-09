@@ -43,88 +43,50 @@
     align-items: center;
 }
 
+.titleCard {
+    font-size: 5vh;
+}
+
 .bloodTypeContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.bloodBag {
+.bloodTray {
     display: inline-block;
-    height: 20vh;
+    height: 90%;
     width: auto;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
 
-    border: solid;
-    border-radius: 0.5em;
-    border-width: 0.3em;
-    border-color: var(--accent);
+    border-radius: 1em;
 }
 
-.bloodBag:hover {
-    .bloodLabel {
-        background-color: var(--highlight);
-    }
+.bloodTray:hover {
     background-color: var(--highlight);
     cursor:
-        url("../assets/graphics/blood_syringe_32x32.svg"),
-        url("../assets/graphics/blood_syringe_32x32.png"),
+        url("../assets/graphics/exports/blood_syringe_32x32.svg"),
+        url("../assets/graphics/exports/blood_syringe_32x32.png"),
         pointer;
 }
 
-.bloodContentContainer {
+.bloodItemContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+
     height: 100%;
-}
-
-.bloodContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 92%;
-    border-radius: 0.5em;
-    background-color: var(--accent);
-}
-
-.bloodLabel {
-    width: 75%;
-    height: 65%;
-    background-color: var(--foreground);
-}
-
-.bloodLabelText {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    position: relative;
-    height: 50%;
     width: 100%;
-
-    color: var(--background);
-
-    font-size: 175%;
-    font-weight: bold;
 }
 
-.decorTextLines {
-    position: relative;
-    height: 50%;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.bloodBag {
+    max-height: 90%;
+    width: auto;
+    aspect-ratio: 1/1;
 }
 
-.decorText {
-    background-color: var(--background);
-    border-radius: 0.2em;
-    height: 0.4em;
-    width: 80%;
+.bloodDisk {
+    max-height: 75%;
+    width: auto;
+    aspect-ratio: 1/1;
 }
