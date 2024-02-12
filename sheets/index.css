@@ -1,10 +1,10 @@
-.infoContainer, .titleContainer, .subtitleContainer,
-.bloodContainer, .infoFooter
+.infoContainer, .bloodTypeHeaderContainer,
+.titleContainer, .bloodContainer, .infoFooter
 {position: relative; width: 100vw;}
 
 .infoContainer {height: 5vh;}
-.titleContainer {height: 20vh;}
-.subtitleContainer {height: 15vh;}
+.titleContainer {height: 15vh;}
+.bloodTypeHeaderContainer {height: 10vh;}
 .bloodTypeContainer {height: 25vh;}
 .infoFooter {height: 10vh;}
 
@@ -14,14 +14,14 @@
     align-items: center;
 }
 
-.infoButton {
-    position: absolute;
+.infoButton, .resetButton {
+    position: relative;
     cursor: pointer;
     display: inline-block;
     border: none;
 
-    right: 0.5em;
-    top: 0.5em;
+    margin: 1%;
+    margin-left: 0;
     height: 3.5vh;
     width: auto;
     aspect-ratio: 1/1;
@@ -32,12 +32,12 @@
     color: var(--foreground);
     background-color: var(--accent);
 }
-.infoButton:hover {
+.infoButton:hover, .resetButton:hover {
     color: var(--background);
     background-color: var(--highlight);
 }
 
-.titleContainer, .subtitleContainer {
+.titleContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +45,12 @@
 
 .titleCard {
     font-size: 5vh;
+}
+
+.bloodTypeHeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bloodTypeContainer {
@@ -65,8 +71,8 @@
 .bloodTray:hover {
     background-color: var(--highlight);
     cursor:
-        url("../assets/graphics/exports/blood_syringes/blood_syringe_32x32.svg"),
-        url("../assets/graphics/exports/blood_syringes/blood_syringe_32x32.png"),
+        url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.svg"),
+        url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.png"),
         pointer;
 }
 
