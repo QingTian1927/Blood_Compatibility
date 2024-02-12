@@ -1,6 +1,5 @@
 .infoContainer, .bloodTypeHeaderContainer,
-.titleContainer, .bloodContainer,
-.resetButtonContainer
+.titleContainer, .bloodContainer, .resetButtonContainer
 {position: relative; width: 100vw;}
 
 .infoContainer {height: 5vh;}
@@ -9,117 +8,65 @@
 .bloodTypeContainer {height: 25vh;}
 .resetButtonContainer {height: 10vh;}
 
-.infoContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
+.resetButtonContainer, .bloodTypeContainer, .infoContainer {
+    display: flex; align-items: center;
+}
+.bloodTypeContainer {justify-content: space-evenly;}
+.infoContainer {justify-content: flex-end;}
+.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer, .resetButtonContainer
+{justify-content: center;}
+
+.bloodItem, .infoButton, .resetButton, .bloodTray {width: auto;}
+.bloodItem, .infoButton, .bloodTray {aspect-ratio: 1/1;}
+.resetButton {aspect-ratio: 3/1;}
+
+.bloodItemContainer {height: 100%; width: 100%;}
+.bloodItem {
+    max-height: 90%;
 }
 
-.infoButton {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    border: none;
+.infoButton, .resetButton {
+    cursor: pointer; border: none;
+    text-align: center; font-weight: bold;
+    color: var(--foreground); background-color: var(--accent);
+}
+.infoButton, .bloodTray {display: inline-block;}
 
+.infoButton {
     margin: 1%;
     margin-left: 0;
     height: 3.5vh;
-    width: auto;
-    aspect-ratio: 1/1;
-    text-align: center;
-    font-weight: bold;
-
     border-radius: 100%;
-    color: var(--foreground);
-    background-color: var(--accent);
 }
-.infoButton:hover {
+
+.resetButton {
+    height: 50%;
+    border-radius: 0.5em;
+    font-size: 100%;
+}
+
+.bloodTray {
+    height: 90%;
+    border-radius: 1em;
+}
+
+.infoButton:hover, .resetButton:hover, .bloodTray:hover {
     color: var(--background);
     background-color: var(--highlight);
 }
 
-.titleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.titleCard {
-    font-size: 5vh;
-}
-
-.bloodTypeHeaderContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bloodTypeHeader {
-    font-size: 2.5vh;
-}
-
-.bloodTypeContainer {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.bloodTray {
-    display: inline-block;
-    height: 90%;
-    width: auto;
-    aspect-ratio: 1/1;
-
-    border-radius: 1em;
-}
-
 .bloodTray:hover {
-    background-color: var(--highlight);
     cursor:
         url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.svg"),
         url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.png"),
         pointer;
 }
 
-.bloodItemContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    width: 100%;
+.titleCard {
+    font-size: 5vh;
 }
 
-.bloodItem {
-    max-height: 90%;
-    width: auto;
-    aspect-ratio: 1/1;
-}
-
-.resetButtonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.resetButton {
-    border: none;
-    cursor: pointer;
-
-    height: 50%;
-    width: auto;
-    aspect-ratio: 3/1;
-
-    text-align: center;
-    font-weight: bold;
-    border-radius: 0.5em;
-    font-size: 100%;
-
-    color: var(--foreground);
-    background-color: var(--accent);
-}
-
-.resetButton:hover {
-    color: var(--background);
-    background-color: var(--highlight);
+.bloodTypeHeader {
+    font-size: 2.5vh;
 }

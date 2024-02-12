@@ -42,23 +42,11 @@ time, mark, audio, video {
     --disabled: #5e5c64;
     --accent: #a51d2d;
 }
+.accented {color: var(--accent);}
 
 body {
     background-color: var(--foreground);
     color: var(--background);
-}
-
-.blackWhite {
-    color: var(--background);
-    background-color: var(--foreground);
-}
-.whiteBlack {
-    color: var(--foreground);
-    background-color: var(--background);
-}
-
-.accented {
-    color: var(--accent);
 }
 
 .viewport {height: 100vh; width: 100vw;}
