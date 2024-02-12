@@ -1,12 +1,13 @@
 .infoContainer, .bloodTypeHeaderContainer,
-.titleContainer, .bloodContainer, .infoFooter
+.titleContainer, .bloodContainer,
+.resetButtonContainer
 {position: relative; width: 100vw;}
 
 .infoContainer {height: 5vh;}
 .titleContainer {height: 15vh;}
 .bloodTypeHeaderContainer {height: 10vh;}
 .bloodTypeContainer {height: 25vh;}
-.infoFooter {height: 10vh;}
+.resetButtonContainer {height: 10vh;}
 
 .infoContainer {
     display: flex;
@@ -14,7 +15,7 @@
     align-items: center;
 }
 
-.infoButton, .resetButton {
+.infoButton {
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -32,7 +33,7 @@
     color: var(--foreground);
     background-color: var(--accent);
 }
-.infoButton:hover, .resetButton:hover {
+.infoButton:hover {
     color: var(--background);
     background-color: var(--highlight);
 }
@@ -51,6 +52,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.bloodTypeHeader {
+    font-size: 2.5vh;
 }
 
 .bloodTypeContainer {
@@ -89,4 +94,32 @@
     max-height: 90%;
     width: auto;
     aspect-ratio: 1/1;
+}
+
+.resetButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resetButton {
+    border: none;
+    cursor: pointer;
+
+    height: 50%;
+    width: auto;
+    aspect-ratio: 3/1;
+
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0.5em;
+    font-size: 100%;
+
+    color: var(--foreground);
+    background-color: var(--accent);
+}
+
+.resetButton:hover {
+    color: var(--background);
+    background-color: var(--highlight);
 }
