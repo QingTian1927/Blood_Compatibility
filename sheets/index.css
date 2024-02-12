@@ -65,8 +65,8 @@
 .bloodTray:hover {
     background-color: var(--highlight);
     cursor:
-        url("../assets/graphics/exports/blood_syringe_32x32.svg"),
-        url("../assets/graphics/exports/blood_syringe_32x32.png"),
+        url("../assets/graphics/exports/blood_syringes/blood_syringe_32x32.svg"),
+        url("../assets/graphics/exports/blood_syringes/blood_syringe_32x32.png"),
         pointer;
 }
 
@@ -79,14 +79,8 @@
     width: 100%;
 }
 
-.bloodBag {
+.bloodItem {
     max-height: 90%;
-    width: auto;
-    aspect-ratio: 1/1;
-}
-
-.bloodDisk {
-    max-height: 75%;
     width: auto;
     aspect-ratio: 1/1;
 }
