@@ -15,17 +15,21 @@ function createBloodType(typeLabel, compatibleTypes) {
     const newBloodType = {
         type: typeLabel,
         state: "normal",
-        compatibility: compatibleTypes
+        compatibility: compatibleTypes,
+        isMixed: false
     };
     return newBloodType;
 }
 
 function mixBlood(donorBloodType, recipientBloodObj) {
-    let isIncompatibleType = !(recipientBloodObj.compatibility.includes(donorBloodType));
-    if (isIncompatibleType) {
+    let isCompatibleType = recipientBloodObj.compatibility.includes(donorBloodType);
+    let isMixed = recipientBloodObj.isMixed;
+
+    if (isMixed) { return; }
+    if (isCompatibleType) { recipientBloodObj.state = "normal"; }
+    else {
         recipientBloodObj.state = "incompatible";
-    } else {
-        recipientBloodObj.state = "normal";
+        recipientBloodObj.isMixed = true;
     }
 }
 
@@ -35,22 +39,10 @@ const bloodBagTypeO = lazyGetID("bloodBagTypeO");
 const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
 
 let selectedType = " ";
-
-bloodBagTypeA.addEventListener("click", () => {
-    selectedType = "A";
-});
-
-bloodBagTypeB.addEventListener("click", () => {
-    selectedType = "B";
-});
-
-bloodBagTypeAB.addEventListener("click", () => {
-    selectedType = "AB";
-});
-
-bloodBagTypeO.addEventListener("click", () => {
-    selectedType = "O";
-})
+bloodBagTypeA.addEventListener("click", () => { selectedType = "A"; });
+bloodBagTypeB.addEventListener("click", () => { selectedType = "B"; });
+bloodBagTypeAB.addEventListener("click", () => { selectedType = "AB"; });
+bloodBagTypeO.addEventListener("click", () => { selectedType = "O"; })
 
 const recipientTypeA = lazyGetID("recipientTypeA");
 const recipientTypeB = lazyGetID("recipientTypeB");
@@ -77,9 +69,32 @@ const bloodObjTypeB = createBloodType("B", ["B", "O"]);
 const bloodObjTypeO = createBloodType("O", ["O"]);
 const bloodObjTypeAB = createBloodType("AB", ["AB", "A", "B", "O"]);
 
-recipientTypeA.addEventListener("click", () => {
+function bloodMixer(recipientBloodTrayObj, associatedBloodTypeObj) {
     if (selectedType != " ") {
-        mixBlood(selectedType, bloodObjTypeA);
+        mixBlood(selectedType, associatedBloodTypeObj);
     }
+    changeBloodIllustration(recipientBloodTrayObj, associatedBloodTypeObj);
+}
+
+recipientTypeA.addEventListener("click", () => { bloodMixer(recipientTypeA, bloodObjTypeA); });
+recipientTypeB.addEventListener("click", () => { bloodMixer(recipientTypeB, bloodObjTypeB); });
+recipientTypeO.addEventListener("click", () => { bloodMixer(recipientTypeO, bloodObjTypeO); });
+recipientTypeAB.addEventListener("click", () => { bloodMixer(recipientTypeAB, bloodObjTypeAB); });
+
+function resetBloodObj(bloodObj) {
+    bloodObj.isMixed = false;
+    bloodObj.state = "normal";
+}
+
+const resetButton = lazyGetID("resetButton");
+resetButton.addEventListener("click", () => {
+    resetBloodObj(bloodObjTypeA);
+    resetBloodObj(bloodObjTypeB);
+    resetBloodObj(bloodObjTypeO);
+    resetBloodObj(bloodObjTypeAB);
+
     changeBloodIllustration(recipientTypeA, bloodObjTypeA);
+    changeBloodIllustration(recipientTypeB, bloodObjTypeB);
+    changeBloodIllustration(recipientTypeO, bloodObjTypeO);
+    changeBloodIllustration(recipientTypeAB, bloodObjTypeAB);
 });
