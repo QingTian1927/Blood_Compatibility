@@ -59,32 +59,3 @@
 .titleCard {text-align: center;}
 
 .bloodTypeContainer hr {border: none;}
-
-@media screen and (orientation:landscape) {
-    .infoContainer {height: 5vh;}
-    .titleContainer {height: 15vh;}
-    .bloodTypeHeaderContainer {height: 10vh;}
-    .bloodTypeContainer {height: 25vh;}
-    .resetButtonContainer {height: 10vh;}
-
-    .bloodTypeContainer hr {display: none;}
-    .bloodTray {height: 90%;}
-
-    .titleCard {font-size: 5vh;}
-    .bloodTypeHeader {font-size: 2.5vh;}
-}
-
-@media screen and (orientation:portrait) {
-    .infoContainer {height: 5vh;}
-    .titleContainer {height: 15vh;}
-    .bloodTypeHeaderContainer {height: 5vh;}
-    .bloodTypeContainer {height: 30vh;}
-    .resetButtonContainer {height: 10vh;}
-
-    .bloodTypeContainer {flex-wrap: wrap;}
-    .bloodTypeContainer hr {width: 100%;}
-    .bloodTray {height: 45%;}
-
-    .titleCard {font-size: 4vh;}
-    .bloodTypeHeader {font-size: 2.5vh;}
-}

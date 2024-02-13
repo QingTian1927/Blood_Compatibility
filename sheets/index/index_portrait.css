@@ -1,0 +1,12 @@
+.infoContainer {height: 5vh;}
+.titleContainer {height: 15vh;}
+.bloodTypeHeaderContainer {height: 5vh;}
+.bloodTypeContainer {height: 30vh;}
+.resetButtonContainer {height: 10vh;}
+
+.bloodTypeContainer {flex-wrap: wrap;}
+.bloodTypeContainer hr {width: 100%;}
+.bloodTray {height: 45%;}
+
+.titleCard {font-size: 4vh;}
+.bloodTypeHeader {font-size: 2.5vh;}
