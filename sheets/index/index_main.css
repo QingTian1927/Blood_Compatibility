@@ -51,8 +51,10 @@
 
 .bloodTray:hover {
     cursor:
-        url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.svg"),
-        url("../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.png"),
+        url("../../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.svg"),
+        /*
+        url("../../assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32.png"),
+        */
         pointer;
 }
 
