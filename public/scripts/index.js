@@ -11,10 +11,10 @@ infoButton.addEventListener("click", () => {
     alert("Lmao");
 });
 
-const emptyCursor = "Empty";
-const emptyInvalidCursor = "EmptyInvalid";
-const halfFullCursor = "HalfFull";
-const halfFullInvalidCursor = "HalfFullInvalid";
+const EMPTY_CURSOR = "Empty";
+const EMPTY_INVALID_CURSOR = "EmptyInvalid";
+const HALF_FULL_CURSOR = "HalfFull";
+const HALF_FULL_INVALID_CURSOR = "HalfFullInvalid";
 
 function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     bloodTrayObj.style.cursor = (
@@ -33,10 +33,10 @@ function setBloodBagImg(bloodBagObj, bloodType) {
 
 function setBloodBagCursor(bloodBagObj) {
     if (selectedType === " ") {
-        setBloodSyringeCursor(bloodBagObj, emptyCursor);
+        setBloodSyringeCursor(bloodBagObj, EMPTY_CURSOR);
         return;
     }
-    setBloodSyringeCursor(bloodBagObj, halfFullCursor);
+    setBloodSyringeCursor(bloodBagObj, HALF_FULL_CURSOR);
 }
 
 const bloodBagTypeA = lazyGetID("bloodBagTypeA");
@@ -138,14 +138,14 @@ function bloodMixer(recipientBloodTrayObj, associatedBloodTypeObj) {
 
 function setRecipientCursor(recipientBloodTrayObj, associatedBloodTypeObj) {
     if (selectedType === " ") {
-        setBloodSyringeCursor(recipientBloodTrayObj, emptyInvalidCursor);
+        setBloodSyringeCursor(recipientBloodTrayObj, EMPTY_INVALID_CURSOR);
         return;
     }
     if (associatedBloodTypeObj.isMixed) {
-        setBloodSyringeCursor(recipientBloodTrayObj, halfFullInvalidCursor);
+        setBloodSyringeCursor(recipientBloodTrayObj, HALF_FULL_INVALID_CURSOR);
         return;
     }
-    setBloodSyringeCursor(recipientBloodTrayObj, halfFullCursor);
+    setBloodSyringeCursor(recipientBloodTrayObj, HALF_FULL_CURSOR);
 }
 
 const bloodObjTypeA = createBloodType("A", ["A", "O"]);
