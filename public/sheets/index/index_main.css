@@ -3,30 +3,32 @@
 {position: relative; width: 100vw;}
 
 .titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
-.resetButtonContainer, .bloodTypeContainer, .infoContainer {
+.resetButtonContainer, .bloodTypeContainer, .infoContainer,
+.currentTypeContainer {
     display: flex; align-items: center;
 }
 .bloodTypeContainer {justify-content: space-evenly;}
 .infoContainer {justify-content: flex-end;}
-.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer, .resetButtonContainer
+.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
+.resetButtonContainer, .currentTypeContainer
 {justify-content: center;}
 
-.bloodItem, .infoButton, .resetButton, .bloodTray {width: auto;}
-.bloodItem, .infoButton, .bloodTray {aspect-ratio: 1/1;}
+.bloodItem, .infoButton, .resetButton, .bloodTray, .infoButton, .currentTypeContainer {width: auto;}
+.bloodItem, .infoButton, .bloodTray, .infoButton, .currentTypeContainer {aspect-ratio: 1/1;}
 .resetButton {aspect-ratio: 3/1;}
 
 .bloodItemContainer {height: 100%; width: 100%;}
 .bloodItem {max-height: 90%;}
 
-.infoButton, .resetButton {
-    cursor: pointer; border: none;
+.infoButton, .resetButton, .currentTypeContainer {
     text-align: center; font-weight: bold;
     color: var(--foreground); background-color: var(--accent);
 }
 .infoButton, .bloodTray {display: inline-block;}
+.infoButton, .resetButton {cursor: pointer; border: none;}
 
-.infoButton {
-    margin: 1%;
+.infoButton, .currentTypeContainer {
+    margin-right: 1.5%;
     margin-left: 0;
     height: 3.5vh;
     border-radius: 100%;
