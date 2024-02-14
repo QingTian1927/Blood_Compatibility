@@ -19,7 +19,7 @@ function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     bloodTrayObj.style.cursor = (
         `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
         `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.png'), ` +
-        "auto"
+        "pointer"
     );
 }
 
@@ -37,21 +37,38 @@ const bloodBagTypeO = lazyGetID("bloodBagTypeO");
 const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
 
 let selectedType = " ";
+const notificationIcon = lazyGetID("notificationIcon");
+
+function showTypeNotification(notificationObj) {
+    if (selectedType === " ") {
+        notificationObj.style.visibility = "hidden";
+        return;
+    }
+    const notification = lazyQuery(notificationObj, "p");
+    notification.innerHTML = selectedType;
+    notificationObj.style.visibility = "visible";
+}
+showTypeNotification(notificationIcon);
+
 bloodBagTypeA.addEventListener("click", () => {
     selectedType = "A";
     setBloodBagCursor(bloodBagTypeA);
+    showTypeNotification(notificationIcon);
 });
 bloodBagTypeB.addEventListener("click", () => {
     selectedType = "B";
     setBloodBagCursor(bloodBagTypeB);
+    showTypeNotification(notificationIcon);
 });
 bloodBagTypeO.addEventListener("click", () => {
     selectedType = "O";
     setBloodBagCursor(bloodBagTypeO);
+    showTypeNotification(notificationIcon);
 })
 bloodBagTypeAB.addEventListener("click", () => {
     selectedType = "AB";
     setBloodBagCursor(bloodBagTypeAB);
+    showTypeNotification(notificationIcon);
 });
 
 bloodBagTypeA.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeA); });
@@ -156,6 +173,7 @@ function resetBloodObj(bloodObj) {
 const resetButton = lazyGetID("resetButton");
 resetButton.addEventListener("click", () => {
     selectedType = " ";
+    showTypeNotification(notificationIcon);
     resetBloodObj(bloodObjTypeA);
     resetBloodObj(bloodObjTypeB);
     resetBloodObj(bloodObjTypeO);
