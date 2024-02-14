@@ -11,6 +11,22 @@ infoButton.addEventListener("click", () => {
     alert("Lmao");
 });
 
+const bloodBagTypeA = lazyGetID("bloodBagTypeA");
+const bloodBagTypeB = lazyGetID("bloodBagTypeB");
+const bloodBagTypeO = lazyGetID("bloodBagTypeO");
+const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
+
+let selectedType = " ";
+bloodBagTypeA.addEventListener("click", () => { selectedType = "A"; });
+bloodBagTypeB.addEventListener("click", () => { selectedType = "B"; });
+bloodBagTypeAB.addEventListener("click", () => { selectedType = "AB"; });
+bloodBagTypeO.addEventListener("click", () => { selectedType = "O"; })
+
+const recipientTypeA = lazyGetID("recipientTypeA");
+const recipientTypeB = lazyGetID("recipientTypeB");
+const recipientTypeO = lazyGetID("recipientTypeO");
+const recipientTypeAB = lazyGetID("recipientTypeAB");
+
 function createBloodType(typeLabel, compatibleTypes) {
     const newBloodType = {
         type: typeLabel,
@@ -32,22 +48,6 @@ function mixBlood(donorBloodType, recipientBloodObj) {
         recipientBloodObj.isMixed = true;
     }
 }
-
-const bloodBagTypeA = lazyGetID("bloodBagTypeA");
-const bloodBagTypeB = lazyGetID("bloodBagTypeB");
-const bloodBagTypeO = lazyGetID("bloodBagTypeO");
-const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
-
-let selectedType = " ";
-bloodBagTypeA.addEventListener("click", () => { selectedType = "A"; });
-bloodBagTypeB.addEventListener("click", () => { selectedType = "B"; });
-bloodBagTypeAB.addEventListener("click", () => { selectedType = "AB"; });
-bloodBagTypeO.addEventListener("click", () => { selectedType = "O"; })
-
-const recipientTypeA = lazyGetID("recipientTypeA");
-const recipientTypeB = lazyGetID("recipientTypeB");
-const recipientTypeO = lazyGetID("recipientTypeO");
-const recipientTypeAB = lazyGetID("recipientTypeAB");
 
 // God helps my naming scheme.
 function changeBloodIllustration(recipientBloodTrayObj, associatedBloodTypeObj) {
