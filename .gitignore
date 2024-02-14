@@ -1,3 +1,6 @@
+# Unnecessary VSCode configurations
+.vscode/
+
 # ------------------------------------------------------------ #
 # https://github.com/github/gitignore/blob/main/Node.gitignore #
 # ------------------------------------------------------------ #
