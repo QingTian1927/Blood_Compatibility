@@ -27,8 +27,13 @@ app.use(express.static(publicPath));
 // * ---------- * //
 
 app.get("/", async (req, res) => {
-    const homePage = getPublicPath("views/index.html");
-    res.status(200).sendFile(homePage);
+    const page = getPublicPath("views/index.html");
+    res.status(200).sendFile(page);
+})
+
+app.get("/info", async (req, res) => {
+    const page = getPublicPath("views/info.html");
+    res.status(200).sendFile(page);
 })
 
 // * ------------------- * //
