@@ -1,14 +1,10 @@
-function lazyQuery(element, selector) {
-    return element.querySelector(selector);
-}
-
-function lazyGetID(elementId) {
-    return document.getElementById(elementId);
-}
+import { lazyGetID } from "./master.js";
+import { lazyQuery } from "./master.js";
+import { openNewTab } from "./master.js";
 
 const infoButton = lazyGetID("infoButton");
 infoButton.addEventListener("click", () => {
-    alert("Lmao");
+    openNewTab("/info");
 });
 
 const EMPTY_CURSOR = "Empty";
