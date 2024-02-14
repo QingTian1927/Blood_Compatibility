@@ -23,6 +23,13 @@ function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     );
 }
 
+function setBloodBagImg(bloodBagObj, bloodType) {
+    const image = lazyQuery(bloodBagObj, "img");
+    image.src = `/assets/graphics/exports/Blood_Bag/BloodBag_Type${bloodType}.svg`;
+    image.alt = `Minh họa túi đựng máu chứa nhóm máu ${bloodType}`;
+    bloodBagObj.title = `Người cho nhóm máu ${bloodType}`
+}
+
 function setBloodBagCursor(bloodBagObj) {
     if (selectedType === " ") {
         setBloodSyringeCursor(bloodBagObj, emptyCursor);
@@ -35,6 +42,11 @@ const bloodBagTypeA = lazyGetID("bloodBagTypeA");
 const bloodBagTypeB = lazyGetID("bloodBagTypeB");
 const bloodBagTypeO = lazyGetID("bloodBagTypeO");
 const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
+
+setBloodBagImg(bloodBagTypeA, "A");
+setBloodBagImg(bloodBagTypeB, "B");
+setBloodBagImg(bloodBagTypeO, "O");
+setBloodBagImg(bloodBagTypeAB, "AB")
 
 let selectedType = " ";
 const notificationIcon = lazyGetID("notificationIcon");
@@ -76,11 +88,6 @@ bloodBagTypeB.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTy
 bloodBagTypeO.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeO); });
 bloodBagTypeAB.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeAB); });
 
-const recipientTypeA = lazyGetID("recipientTypeA");
-const recipientTypeB = lazyGetID("recipientTypeB");
-const recipientTypeO = lazyGetID("recipientTypeO");
-const recipientTypeAB = lazyGetID("recipientTypeAB");
-
 function createBloodType(typeLabel, compatibleTypes) {
     const newBloodType = {
         type: typeLabel,
@@ -92,24 +99,21 @@ function createBloodType(typeLabel, compatibleTypes) {
 }
 
 // God helps my naming scheme.
-function changeBloodIllustration(recipientBloodTrayObj, associatedBloodTypeObj) {
+function setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj) {
     const image = lazyQuery(recipientBloodTrayObj, "img");
     const bloodType = associatedBloodTypeObj.type;
 
     if (associatedBloodTypeObj.state == "normal") {
         image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Type${bloodType}_Light.svg`;
-        image.alt = `Illustration of type ${bloodType} blood in normal conditions`;
+        image.alt = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
+        recipientBloodTrayObj.title = `Nhóm máu ${bloodType} trong tình trạng bình thường`;
     }
     else if (associatedBloodTypeObj.state == "incompatible") {
         image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Type${bloodType}_Light.svg`;
-        image.alt = `Illustration of type ${bloodType} blood when mixed with incompatible blood types`;
+        image.alt = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
+        recipientBloodTrayObj.title = `Nhóm máu ${bloodType} khi trộn với nhóm máu không tương thích`;
     }
 }
-
-const bloodObjTypeA = createBloodType("A", ["A", "O"]);
-const bloodObjTypeB = createBloodType("B", ["B", "O"]);
-const bloodObjTypeO = createBloodType("O", ["O"]);
-const bloodObjTypeAB = createBloodType("AB", ["AB", "A", "B", "O"]);
 
 function mixBlood(donorBloodType, recipientBloodObj) {
     let isCompatibleType = recipientBloodObj.compatibility.includes(donorBloodType);
@@ -128,7 +132,7 @@ function bloodMixer(recipientBloodTrayObj, associatedBloodTypeObj) {
     if (selectedType !== " ") {
         mixBlood(selectedType, associatedBloodTypeObj);
     }
-    changeBloodIllustration(recipientBloodTrayObj, associatedBloodTypeObj);
+    setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj);
 }
 
 function setRecipientCursor(recipientBloodTrayObj, associatedBloodTypeObj) {
@@ -142,6 +146,22 @@ function setRecipientCursor(recipientBloodTrayObj, associatedBloodTypeObj) {
     }
     setBloodSyringeCursor(recipientBloodTrayObj, halfFullCursor);
 }
+
+const bloodObjTypeA = createBloodType("A", ["A", "O"]);
+const bloodObjTypeB = createBloodType("B", ["B", "O"]);
+const bloodObjTypeO = createBloodType("O", ["O"]);
+const bloodObjTypeAB = createBloodType("AB", ["AB", "A", "B", "O"]);
+
+const recipientTypeA = lazyGetID("recipientTypeA");
+const recipientTypeB = lazyGetID("recipientTypeB");
+const recipientTypeO = lazyGetID("recipientTypeO");
+const recipientTypeAB = lazyGetID("recipientTypeAB");
+
+// Initialize blood items
+setRecipientBloodImg(recipientTypeA, bloodObjTypeA);
+setRecipientBloodImg(recipientTypeB, bloodObjTypeB);
+setRecipientBloodImg(recipientTypeO, bloodObjTypeO);
+setRecipientBloodImg(recipientTypeAB, bloodObjTypeAB);
 
 recipientTypeA.addEventListener("click", () => {
     bloodMixer(recipientTypeA, bloodObjTypeA);
@@ -178,8 +198,8 @@ resetButton.addEventListener("click", () => {
     resetBloodObj(bloodObjTypeB);
     resetBloodObj(bloodObjTypeO);
     resetBloodObj(bloodObjTypeAB);
-    changeBloodIllustration(recipientTypeA, bloodObjTypeA);
-    changeBloodIllustration(recipientTypeB, bloodObjTypeB);
-    changeBloodIllustration(recipientTypeO, bloodObjTypeO);
-    changeBloodIllustration(recipientTypeAB, bloodObjTypeAB);
+    setRecipientBloodImg(recipientTypeA, bloodObjTypeA);
+    setRecipientBloodImg(recipientTypeB, bloodObjTypeB);
+    setRecipientBloodImg(recipientTypeO, bloodObjTypeO);
+    setRecipientBloodImg(recipientTypeAB, bloodObjTypeAB);
 });
