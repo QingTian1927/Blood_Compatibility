@@ -15,6 +15,7 @@ const emptyCursor = "Empty";
 const emptyInvalidCursor = "EmptyInvalid";
 const halfFullCursor = "HalfFull";
 const halfFullInvalidCursor = "HalfFullInvalid";
+
 function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     bloodTrayObj.style.cursor = (
         `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
