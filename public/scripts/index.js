@@ -11,16 +11,53 @@ infoButton.addEventListener("click", () => {
     alert("Lmao");
 });
 
+const emptyCursor = "Empty";
+const emptyInvalidCursor = "EmptyInvalid";
+const halfFullCursor = "HalfFull";
+const halfFullInvalidCursor = "HalfFullInvalid";
+function setBloodSyringeCursor(bloodTrayObj, cursorType) {
+    bloodTrayObj.style.cursor = (
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.png'), ` +
+        "auto"
+    );
+}
+
+function setBloodBagCursor(bloodBagObj) {
+    if (selectedType === " ") {
+        setBloodSyringeCursor(bloodBagObj, emptyCursor);
+        return;
+    }
+    setBloodSyringeCursor(bloodBagObj, halfFullCursor);
+}
+
 const bloodBagTypeA = lazyGetID("bloodBagTypeA");
 const bloodBagTypeB = lazyGetID("bloodBagTypeB");
 const bloodBagTypeO = lazyGetID("bloodBagTypeO");
 const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
 
 let selectedType = " ";
-bloodBagTypeA.addEventListener("click", () => { selectedType = "A"; });
-bloodBagTypeB.addEventListener("click", () => { selectedType = "B"; });
-bloodBagTypeAB.addEventListener("click", () => { selectedType = "AB"; });
-bloodBagTypeO.addEventListener("click", () => { selectedType = "O"; })
+bloodBagTypeA.addEventListener("click", () => {
+    selectedType = "A";
+    setBloodBagCursor(bloodBagTypeA);
+});
+bloodBagTypeB.addEventListener("click", () => {
+    selectedType = "B";
+    setBloodBagCursor(bloodBagTypeB);
+});
+bloodBagTypeO.addEventListener("click", () => {
+    selectedType = "O";
+    setBloodBagCursor(bloodBagTypeO);
+})
+bloodBagTypeAB.addEventListener("click", () => {
+    selectedType = "AB";
+    setBloodBagCursor(bloodBagTypeAB);
+});
+
+bloodBagTypeA.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeA); });
+bloodBagTypeB.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeB); });
+bloodBagTypeO.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeO); });
+bloodBagTypeAB.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeAB); });
 
 const recipientTypeA = lazyGetID("recipientTypeA");
 const recipientTypeB = lazyGetID("recipientTypeB");
@@ -35,18 +72,6 @@ function createBloodType(typeLabel, compatibleTypes) {
         isMixed: false
     };
     return newBloodType;
-}
-
-function mixBlood(donorBloodType, recipientBloodObj) {
-    let isCompatibleType = recipientBloodObj.compatibility.includes(donorBloodType);
-    let isMixed = recipientBloodObj.isMixed;
-
-    if (isMixed) { return; }
-    if (isCompatibleType) { recipientBloodObj.state = "normal"; }
-    else {
-        recipientBloodObj.state = "incompatible";
-        recipientBloodObj.isMixed = true;
-    }
 }
 
 // God helps my naming scheme.
@@ -69,17 +94,59 @@ const bloodObjTypeB = createBloodType("B", ["B", "O"]);
 const bloodObjTypeO = createBloodType("O", ["O"]);
 const bloodObjTypeAB = createBloodType("AB", ["AB", "A", "B", "O"]);
 
+function mixBlood(donorBloodType, recipientBloodObj) {
+    let isCompatibleType = recipientBloodObj.compatibility.includes(donorBloodType);
+    let isMixed = recipientBloodObj.isMixed;
+
+    if (isMixed) { return; }
+    if (isCompatibleType) {
+        recipientBloodObj.state = "normal";
+        return;
+    }
+    recipientBloodObj.state = "incompatible";
+    recipientBloodObj.isMixed = true;
+}
+
 function bloodMixer(recipientBloodTrayObj, associatedBloodTypeObj) {
-    if (selectedType != " ") {
+    if (selectedType !== " ") {
         mixBlood(selectedType, associatedBloodTypeObj);
     }
     changeBloodIllustration(recipientBloodTrayObj, associatedBloodTypeObj);
 }
 
-recipientTypeA.addEventListener("click", () => { bloodMixer(recipientTypeA, bloodObjTypeA); });
-recipientTypeB.addEventListener("click", () => { bloodMixer(recipientTypeB, bloodObjTypeB); });
-recipientTypeO.addEventListener("click", () => { bloodMixer(recipientTypeO, bloodObjTypeO); });
-recipientTypeAB.addEventListener("click", () => { bloodMixer(recipientTypeAB, bloodObjTypeAB); });
+function setRecipientCursor(recipientBloodTrayObj, associatedBloodTypeObj) {
+    if (selectedType === " ") {
+        setBloodSyringeCursor(recipientBloodTrayObj, emptyInvalidCursor);
+        return;
+    }
+    if (associatedBloodTypeObj.isMixed) {
+        setBloodSyringeCursor(recipientBloodTrayObj, halfFullInvalidCursor);
+        return;
+    }
+    setBloodSyringeCursor(recipientBloodTrayObj, halfFullCursor);
+}
+
+recipientTypeA.addEventListener("click", () => {
+    bloodMixer(recipientTypeA, bloodObjTypeA);
+    setRecipientCursor(recipientTypeA, bloodObjTypeA);
+});
+recipientTypeB.addEventListener("click", () => {
+    bloodMixer(recipientTypeB, bloodObjTypeB);
+    setRecipientCursor(recipientTypeB, bloodObjTypeB);
+});
+recipientTypeO.addEventListener("click", () => {
+    bloodMixer(recipientTypeO, bloodObjTypeO);
+    setRecipientCursor(recipientTypeO, bloodObjTypeO);
+});
+recipientTypeAB.addEventListener("click", () => {
+    bloodMixer(recipientTypeAB, bloodObjTypeAB);
+    setRecipientCursor(recipientTypeAB, bloodObjTypeAB);
+});
+
+recipientTypeA.addEventListener("mouseover", () => { setRecipientCursor(recipientTypeA, bloodObjTypeA); });
+recipientTypeB.addEventListener("mouseover", () => { setRecipientCursor(recipientTypeB, bloodObjTypeB); });
+recipientTypeO.addEventListener("mouseover", () => { setRecipientCursor(recipientTypeO, bloodObjTypeO); });
+recipientTypeAB.addEventListener("mouseover", () => { setRecipientCursor(recipientTypeAB, bloodObjTypeAB); });
 
 function resetBloodObj(bloodObj) {
     bloodObj.isMixed = false;
@@ -88,11 +155,11 @@ function resetBloodObj(bloodObj) {
 
 const resetButton = lazyGetID("resetButton");
 resetButton.addEventListener("click", () => {
+    selectedType = " ";
     resetBloodObj(bloodObjTypeA);
     resetBloodObj(bloodObjTypeB);
     resetBloodObj(bloodObjTypeO);
     resetBloodObj(bloodObjTypeAB);
-
     changeBloodIllustration(recipientTypeA, bloodObjTypeA);
     changeBloodIllustration(recipientTypeB, bloodObjTypeB);
     changeBloodIllustration(recipientTypeO, bloodObjTypeO);
