@@ -22,13 +22,13 @@ time, mark, audio, video {
 
 @font-face {
     font-family: "Cantarell", sans-serif;
-    src: url("../assets/fonts/Cantarell/Cantarell-Regular.ttf");
+    src: url("/assets/fonts/Cantarell/Cantarell-Regular.ttf");
     font-display: swap;
 }
 
 @font-face {
     font-family: "Noto Serif", serif;
-    src: url("../assets/fonts/Noto_Serif/NotoSerif-Regular.ttf");
+    src: url("/assets/fonts/Noto_Serif/NotoSerif-Regular.ttf");
     font-display: swap;
 }
 
