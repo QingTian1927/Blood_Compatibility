@@ -44,8 +44,11 @@ app.all("*", (req, res) => {
 // * SERVER INITIALIZATION * //
 // * --------------------- * //
 
+// Potentially dangerous but I figure it's probably fine for this use case.
+initTime = 0;
 app.listen(port, async () => {
-    console.log(`Blood Compatibility listening on port {${port}}`);
+    initTime = humanTimestamp();
+    console.log(`[${initTime}] Blood Compatibility listening on port {${port}}`);
 })
 
 // * ------------------------- * //
@@ -58,4 +61,12 @@ function getPublicPath(dir) {
 
 function getAbsPath(dir) {
     return path.join(__dirname, dir);
+}
+
+// * ------------------------ * //
+// * SERVER LOGGING FUNCTIONS * //
+// * ------------------------ * //
+
+function humanTimestamp() {
+    return new Date().toISOString();
 }
