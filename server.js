@@ -31,6 +31,15 @@ app.get("/", async (req, res) => {
     res.status(200).sendFile(homePage);
 })
 
+// * ------------------- * //
+// * 404 CATCH-ALL ROUTE * //
+// * ------------------- * //
+
+app.all("*", (req, res) => {
+    const error404Page = getPublicPath("views/404.html");
+    res.status(404).sendFile(error404Page);
+})
+
 // * --------------------- * //
 // * SERVER INITIALIZATION * //
 // * --------------------- * //
