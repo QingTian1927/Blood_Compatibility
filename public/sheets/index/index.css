@@ -25,7 +25,8 @@
     color: var(--foreground); background-color: var(--accent);
 }
 .infoButton, .bloodTray {display: inline-block;}
-.infoButton, .resetButton, .currentTypeLabel, .currentTypeContainer {cursor: pointer; border: none;}
+.infoButton, .resetButton {cursor: pointer; border: none;}
+.currentTypeContainer, .currentTypeLabel {cursor: help;}
 
 .infoButton, .currentTypeContainer {
     margin-right: 1vw;
