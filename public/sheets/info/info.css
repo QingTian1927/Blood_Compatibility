@@ -5,67 +5,33 @@
 
 .titleContainer, .returnButtonContainer {width: 100vw;}
 
-.altBackground {
-    background-color: var(--highlight);
-}
+.titleContainer, .sectionHeadingContainer, .subHeadingContainer,
+.imgContainer, .returnButtonContainer {display: flex; align-items: center;}
 
-.titleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.titleContainer, .imgContainer, .returnButtonContainer {justify-content: center;}
+.sectionHeadingContainer, .subHeadingContainer {justify-content: flex-start;}
 
-    height:10vh;
+.titleContainer, .imgContainer, .returnButton {text-align: center;}
 
-    color: var(--foreground);
-    background-color: var(--accent);
-}
+.titleContainer, .returnButton {color: var(--foreground); background-color: var(--accent);}
 
-.sectionContainer {
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-}
+.sectionContainer {padding-top: 1vh; padding-bottom: 1vh;}
+.h2Paragraph, .h3Paragraph{margin-top: 0.5vh; margin-bottom: 1vh;}
 
-.sectionHeadingContainer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 7.5vh;
-}
-
-.subHeadingContainer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 5vh;
-}
+.titleContainer {height:10vh;}
+.sectionHeadingContainer {height: 7.5vh;}
+.subHeadingContainer {height: 5vh;}
+.returnButtonContainer {height: 15vh;}
 
 .imgContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    text-align: center;
 
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-    }
+    img {max-width: 100%; max-height: 100%;}
 
     .imgAltText {
         font-style: italic;
-        margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin-top: 1vh; margin-bottom: 1vh;
     }
-}
-
-.returnButtonContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
 }
 
 .returnButton {
@@ -75,42 +41,14 @@
     max-height: 80%;
     padding: 1em;
 
-    border: none;
-    border-radius: 0.5em;
+    border-radius: 0.5em; border: none;
 
-    text-align: center;
     font-weight: bold;
-
-    color: var(--foreground);
-    background-color: var(--accent);
 }
-.returnButton:hover {
-    color: var(--background);
-    background-color: var(--highlight);
-}
+.returnButton:hover {color: var(--background); background-color: var(--highlight);}
 
-.sectionHeading {
-    color: var(--accent);
-}
+.sectionHeading {color: var(--accent);}
 
-.h2Paragraph, .h3Paragraph
-{margin-top: 0.5vh; margin-bottom: 1vh;}
-
-.sectionHeading {margin-left: 2vw;}
-
-.subHeading, .h2Paragraph
-{margin-left: 3vw;}
-.h3Paragraph {margin-left: 4vw;}
-.bulletList {margin-left: 5vw;}
-
-em {
-    font-style: italic;
-}
-
-strong {
-    font-style: bold;
-}
-
-code {
-    font-family: "Hasklug NFM", monospace;
-}
+em {font-style: italic;}
+strong {font-style: bold;}
+code {font-family: "Hasklug NFM", monospace;}
