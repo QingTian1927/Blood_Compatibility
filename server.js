@@ -12,7 +12,7 @@ const fs = require("fs/promises")
 // * ---------------- * //
 
 const app = express();
-const port = 4242;
+const port = process.env.PORT || 4242;
 const publicPath = getAbsPath("public");
 
 // * ------------ * //
