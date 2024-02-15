@@ -13,7 +13,11 @@
 
 .titleContainer, .imgContainer, .returnButton {text-align: center;}
 
-.titleContainer, .returnButton {color: var(--foreground); background-color: var(--accent);}
+.titleContainer, .returnButton {
+    cursor: pointer;
+    color: var(--foreground); background-color: var(--accent);
+}
+.titleContainer:hover, .returnButton:hover {color: var(--background); background-color: var(--highlight);}
 
 .sectionContainer {padding-top: 1vh; padding-bottom: 1vh;}
 .subHeadingContainer, .h2Paragraph, .h3Paragraph{margin-top: 2vh; margin-bottom: 2vh;}
@@ -37,7 +41,6 @@
 
 .returnButton {
     display: inline-block;
-    cursor: pointer;
 
     max-height: 80%;
     padding: 1em;
@@ -46,7 +49,6 @@
 
     font-weight: bold;
 }
-.returnButton:hover {color: var(--background); background-color: var(--highlight);}
 
 .sectionHeading {color: var(--accent);}
 
