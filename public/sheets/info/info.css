@@ -52,7 +52,7 @@
     font-weight: bold;
 }
 
-.sectionHeading {color: var(--accent);}
+.sectionHeading {color: var(--accent); text-transform: uppercase;}
 
 em {font-style: italic;}
 strong {font-style: bold;}
