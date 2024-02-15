@@ -6,9 +6,9 @@
 }
 
 .sectionHeading {margin-left: 2vw; margin-right: 2vw;}
-.subHeading, .h2Paragraph{margin-left: 3vw; margin-right: 3vw;}
-.h3Paragraph {margin-left: 4vw; margin-right: 4vw;}
-.bulletList {margin-left: 5vw; margin-right: 5vw;}
+.subHeading, .h2Paragraph{margin-left: 3.5vw; margin-right: 3.5vw;}
+.h3Paragraph {margin-left: 4.75vw; margin-right: 4.75vw;}
+.bulletList {margin-left: 5.75vw; margin-right: 5.75vw;}
 
 .mainTitle {font-size: 3.5vh;}
 .sectionHeading {font-size: 3vh;}
