@@ -1,0 +1,18 @@
+.sectionContainer {
+    --marginValue: 3vw;
+    margin-left: var(--marginValue);
+    margin-right: var(--marginValue);
+    width: calc(100vw - calc(var(--marginValue) * 2));
+}
+
+.sectionHeading {margin-left: 1vw; margin-right: 1vw;}
+.subHeading, .h2Paragraph{margin-left: 6vw; margin-right: 6vw;}
+.h3Paragraph {margin-left: 7vw; margin-right: 7vw;}
+.bulletList {margin-left: 10vw; margin-right: 10vw;}
+
+.mainTitle {font-size: 2.75vh;}
+.sectionHeading {font-size: 2.5vh;}
+.subHeading {font-size: 2.25vh;}
+.imgAltText {font-size: 1.5vh;}
+.returnButton {font-size: 1.75vh;}
+p {font-size: 1.75vh;}

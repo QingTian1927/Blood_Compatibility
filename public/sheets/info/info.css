@@ -16,11 +16,12 @@
 .titleContainer, .returnButton {color: var(--foreground); background-color: var(--accent);}
 
 .sectionContainer {padding-top: 1vh; padding-bottom: 1vh;}
-.h2Paragraph, .h3Paragraph{margin-top: 0.5vh; margin-bottom: 1vh;}
+.subHeadingContainer, .h2Paragraph, .h3Paragraph{margin-top: 2vh; margin-bottom: 2vh;}
+.bulletList p {margin-top: 1vh; margin-bottom: 1vh;}
 
 .titleContainer {height:10vh;}
-.sectionHeadingContainer {height: 7.5vh;}
-.subHeadingContainer {height: 5vh;}
+.sectionHeadingContainer {height: 5vh;}
+.subHeadingContainer {height: 3.5vh;}
 .returnButtonContainer {height: 15vh;}
 
 .imgContainer {

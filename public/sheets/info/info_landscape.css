@@ -5,9 +5,14 @@
     width: calc(100vw - calc(var(--marginValue) * 2));
 }
 
+.sectionHeading {margin-left: 2vw; margin-right: 2vw;}
+.subHeading, .h2Paragraph{margin-left: 3vw; margin-right: 3vw;}
+.h3Paragraph {margin-left: 4vw; margin-right: 4vw;}
+.bulletList {margin-left: 5vw; margin-right: 5vw;}
+
 .mainTitle {font-size: 3.5vh;}
 .sectionHeading {font-size: 3vh;}
 .subHeading {font-size: 2.5vh;}
 .imgAltText {font-size: 1.75vh;}
-.returnButton {font-size: 2.5vh;}
+.returnButton {font-size: 2.25vh;}
 p {font-size: 2vh;}
