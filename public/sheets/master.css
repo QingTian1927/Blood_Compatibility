@@ -32,8 +32,15 @@ time, mark, audio, video {
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Hasklug NFM", monospace;
+    src: url("/assets/fonts/Noto_Serif/Hasklug_NerdFont.otf");
+    font-display: swap;
+}
+
 .sans-serif {font-family: "Cantarell", sans-serif;}
 .serif {font-family: "Noto Serif", serif;}
+.monoscape {font-family: "Hasklug NFM", monospace;}
 
 :root {
     --background: #241f31;
