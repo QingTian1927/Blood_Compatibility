@@ -1,0 +1,116 @@
+.titleContainer, .sectionContainer, .sectionHeadingContainer,
+.subHeadingContainer, .listContainer, .imgContainer,
+.returnButtonContainer
+{position: relative;}
+
+.titleContainer, .returnButtonContainer {width: 100vw;}
+
+.altBackground {
+    background-color: var(--highlight);
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height:10vh;
+
+    color: var(--foreground);
+    background-color: var(--accent);
+}
+
+.sectionContainer {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.sectionHeadingContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 7.5vh;
+}
+
+.subHeadingContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5vh;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    .imgAltText {
+        font-style: italic;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+}
+
+.returnButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+
+.returnButton {
+    display: inline-block;
+    cursor: pointer;
+
+    max-height: 80%;
+    padding: 1em;
+
+    border: none;
+    border-radius: 0.5em;
+
+    text-align: center;
+    font-weight: bold;
+
+    color: var(--foreground);
+    background-color: var(--accent);
+}
+.returnButton:hover {
+    color: var(--background);
+    background-color: var(--highlight);
+}
+
+.sectionHeading {
+    color: var(--accent);
+}
+
+.h2Paragraph, .h3Paragraph
+{margin-top: 0.5vh; margin-bottom: 1vh;}
+
+.sectionHeading {margin-left: 2vw;}
+
+.subHeading, .h2Paragraph
+{margin-left: 3vw;}
+.h3Paragraph {margin-left: 4vw;}
+.bulletList {margin-left: 5vw;}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-style: bold;
+}
+
+code {
+    font-family: "Hasklug NFM", monospace;
+}

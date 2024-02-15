@@ -1,0 +1,13 @@
+.sectionContainer {
+    --marginValue: 15vw;
+    margin-left: var(--marginValue);
+    margin-right: var(--marginValue);
+    width: calc(100vw - calc(var(--marginValue) * 2));
+}
+
+.mainTitle {font-size: 3.5vh;}
+.sectionHeading {font-size: 3vh;}
+.subHeading {font-size: 2.5vh;}
+.imgAltText {font-size: 1.75vh;}
+.returnButton {font-size: 2.5vh;}
+p {font-size: 2vh;}
