@@ -14,15 +14,15 @@ const HALF_FULL_INVALID_CURSOR = "HalfFullInvalid";
 
 function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     bloodTrayObj.style.cursor = (
-        `url('./assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
-        `url('./assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.png'), ` +
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.png'), ` +
         "pointer"
     );
 }
 
 function setBloodBagImg(bloodBagObj, bloodType) {
     const image = lazyQuery(bloodBagObj, "img");
-    image.src = `./assets/graphics/exports/Blood_Bag/BloodBag_Type${bloodType}.svg`;
+    image.src = `/assets/graphics/exports/Blood_Bag/BloodBag_Type${bloodType}.svg`;
     image.alt = `Minh họa túi đựng máu chứa nhóm máu ${bloodType}`;
     bloodBagObj.title = `Người cho nhóm máu ${bloodType}`
 }
@@ -101,12 +101,12 @@ function setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj) {
     const bloodType = associatedBloodTypeObj.type;
 
     if (associatedBloodTypeObj.state == "normal") {
-        image.src = `./assets/graphics/exports/Recipient_Blood/NormalBlood_Type${bloodType}_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Type${bloodType}_Light.svg`;
         image.alt = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
         recipientBloodTrayObj.title = `Nhóm máu ${bloodType} trong tình trạng bình thường`;
     }
     else if (associatedBloodTypeObj.state == "incompatible") {
-        image.src = `./assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Type${bloodType}_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Type${bloodType}_Light.svg`;
         image.alt = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
         recipientBloodTrayObj.title = `Nhóm máu ${bloodType} khi trộn với nhóm máu không tương thích`;
     }
