@@ -39,6 +39,8 @@
     }
 }
 
+.mainTitle {max-width: 90%;}
+
 .returnButton {
     display: inline-block;
 
