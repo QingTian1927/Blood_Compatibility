@@ -40,7 +40,7 @@ time, mark, audio, video {
 
 .sans-serif {font-family: "Cantarell", sans-serif;}
 .serif {font-family: "Noto Serif", serif;}
-.monoscape {font-family: "Hasklug NFM", monospace;}
+.monospace {font-family: "Hasklug NFM", monospace;}
 
 :root {
     --background: #241f31;
