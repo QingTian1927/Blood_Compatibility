@@ -26,14 +26,18 @@ app.use(express.static(publicPath));
 // * GET ROUTES * //
 // * ---------- * //
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
     const page = getPublicPath("views/index.html");
     res.status(200).sendFile(page);
 })
 
-app.get("/info", async (req, res) => {
+app.get("/info", (req, res) => {
     const page = getPublicPath("views/info.html");
     res.status(200).sendFile(page);
+})
+
+app.get("/healthcheck", (req, res) => {
+    res.status(200).send("200 OK");
 })
 
 // * ------------------- * //
