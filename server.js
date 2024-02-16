@@ -64,10 +64,12 @@ app.all("*", (req, res) => {
 
 // Potentially dangerous but I figure it's probably fine for this use case.
 initTime = 0;
-app.listen(port, async () => {
+const server = app.listen(port, async () => {
     initTime = humanTimestamp();
     console.log(`[${initTime}] Blood Compatibility listening on port {${port}}`);
 })
+
+server.keepAliveTimeout = 120000  // 120 seconds
 
 // * ------------------------- * //
 // * GENERAL FILE IO FUNCTIONS * //
