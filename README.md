@@ -110,7 +110,7 @@ Whenever we click on a illustration representing a recipient's blood type, we im
 
 _Figure 2.2: Type O blood agglutinating after being mixed with type A blood_
 
-3. Restoring the initial state of recipient's blood types
+## 3. Restoring the initial state of recipient's blood types
 When one mixes two incompatible blood types together, the cursor will display a half-full syringe with a red circle with a crossed diagonal line underneath (Refer to _Figure 2.1_). This signifies that we cannot mix an agglutinated blood type with another blood type.
 
 Thus, in the example above, to mix the recipient's type O blood with another blood type, we must first restore the initial state of the recipient's blood types by clicking on the **Reset** button at the bottom of the page like so:
