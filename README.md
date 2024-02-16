@@ -5,6 +5,12 @@ An interactive tool to learn about basic blood type compatibility, for education
 
 This website was originally created at the request of my mother. Since this is a hobbyist project in nature, it is very basic in terms of features. Nevertheless, designing the entire website from scratch was a very valuable learning experience to myself.
 
+# Table of Contents
+1. [Technology](#technology)
+1. [Running From Source](#running-from-source)
+1. [User Manual](#user-manual)
+1. [Credits](#credits)
+
 # Technology
 Although it is possible, and perhaps even recommended, to build the website using popular frameworks such as React, Vue or Svelt, I've decided to prioritize simplicity and accessibility.
 
@@ -79,7 +85,7 @@ If you specifies the `<PORT NUMBER>` correctly, you should see the main page pop
 
 ## Windows (WIP)
 
-# Usage Manual
+# User Manual
 **Note:** This is a very verbose instruction manual that explains the interactive elements of the website in a highly detailed manner. Since Quynhbio's Interactive Blood Compatibility Checker is designed to be as simple and intuitive as possible, you may skip this section if you wish to.
 
 ## 1. Selecting the donor's blood type
@@ -129,10 +135,9 @@ _Figure 3.1: The mouse cursor when hovered over the rest button_
 
 After clicking on the **Reset** button, the page will be restored to its initial state, just like when we has opened the page for the first time.
 
+# Credits
+Asides from third-party libraries in its code base, Quynhbio's Interactive Blood Compatibility Checker also used some assets from third-party sources, all of which will be listed in the following section:
 
+* The blood syringe cursor was modified from `Green syringe element vector` by `rawpixel.com` on [Freepik](https://www.freepik.com/free-vector/green-syringe-element-vector_18722102.htm#query=Green%20syringe%20element%20vector&position=10&from_view=search&track=ais&uuid=f56c1b4a-9ccd-4f33-9e3a-6b5c1ace3d64)
 
-
-
-
-
-
+* The colorscheme of the website was referenced from the `Palette` of the [GNOME Human Interface Guidelines](https://developer.gnome.org/hig/reference/palette.html)
