@@ -5,6 +5,7 @@
 const express = require("express");
 const compression = require("compression");
 const path = require("path");
+const rateLimit = require('express-rate-limit');
 
 // * ---------------- * //
 // * GLOBAL CONSTANTS * //
@@ -15,8 +16,7 @@ const port = process.env.PORT || 4242;
 const publicPath = getAbsPath("public");
 
 // set up rate limiter: maximum of five requests per minute
-var RateLimit = require('express-rate-limit');
-var limiter = RateLimit({
+const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // max 100 requests per windowMs
 });
