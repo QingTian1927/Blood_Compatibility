@@ -1,10 +1,10 @@
 import { lazyGetID } from "./master.js";
 import { lazyQuery } from "./master.js";
-import { openNewTab } from "./master.js";
+import { openSameTab } from "./master.js";
 
 const infoButton = lazyGetID("infoButton");
 infoButton.addEventListener("click", () => {
-    openNewTab("/info");
+    openSameTab("/info");
 });
 
 const EMPTY_CURSOR = "Empty";
