@@ -28,6 +28,7 @@ To run the website from source, please make sure to download and install the fol
 * `node` >= `20.10.0`
 * `compression` >= `1.7.4`
 * `express` >= `4.18.2`
+* `express-rate-limit` >= `7.1.5`
 
 ## Linux
 To get started on Linux, first download Node.js using your package manager of choice. Please note that the exact package name may differ across distributions.
