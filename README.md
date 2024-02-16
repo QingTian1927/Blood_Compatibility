@@ -70,6 +70,13 @@ You should see the following message if everything goes well:
 
 where `<PORT NUMBER>` could be any number such as `4242` or `10000`.
 
+Finally, open up your browser of choice and enter the following into the address bar:
+```
+localhost:<PORT NUMBER>
+```
+
+If you specifies the `<PORT NUMBER>` correctly, you should see the main page pops up.
+
 ## Windows (WIP)
 
 # Usage Manual
