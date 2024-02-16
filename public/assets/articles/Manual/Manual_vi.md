@@ -51,7 +51,7 @@ Trang web được lập trình chỉ sử dụng 3 ngôn ngữ **HTML**, **CSS*
 
 **Công Cụ Kiểm Tra Các Nhóm Máu Tương Thích** (tên tiếng Anh là _Quynhbio's Interactive Blood Compatibility Checker_) là một công cụ mã nguồn mở được xuất bản theo bản quyền **GNU General Public License version 3** (tạm dịch: _Giấy phép Công cộng GNU phiên bản 3_). Chi tiết cụ thể vui lòng tham khảo nguyên văn của bản quyền GNU theo đường dẫn sau: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-Đường dẫn tới mã nguồn của trang web trên **GitHub**: [https://example.com/](https://example.com/)
+Đường dẫn tới mã nguồn của trang web trên **GitHub**: [https://github.com/QingTian1927/Quynhbio-s-Interactive-Blood-Compatibility-Checker](https://github.com/QingTian1927/Quynhbio-s-Interactive-Blood-Compatibility-Checker)
 
 Nếu bạn có bất kỳ thắc mắc nào trong quá trình sử dụng trang web, bạn có thể liên hệ với nhà phát triển ở trong mục **Discussions** của trang web mã nguồn. Đối với những vấn đề hoặc sự cố kỹ thuật, bạn có thể yêu cầu trợ giúp ở trong mục **Issues**.
 
