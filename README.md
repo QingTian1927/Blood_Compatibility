@@ -39,17 +39,17 @@ To get started on Linux, first download Node.js using your package manager of ch
 
 **Fedora**
 ``` sh
-sudo dnf install nodejs
+dnf install nodejs
 ```
 
 **Debian**
 ``` sh
-sudo apt install nodejs
+apt install nodejs
 ```
 
 **Arch:**
 ``` sh
-sudo pacman -S nodejs-lts-iron
+pacman -S nodejs-lts-iron
 ```
 
 Next, clone the GitHub repository onto your system.
