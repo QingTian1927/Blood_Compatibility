@@ -54,6 +54,4 @@
 
 .sectionHeading {color: var(--accent); text-transform: uppercase;}
 
-em {font-style: italic;}
-strong {font-style: bold;}
-code {font-family: "Hasklug NFM", monospace;}
+code {font-family: "Hasklug Nerd Font Mono", monospace;}

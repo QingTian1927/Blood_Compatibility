@@ -33,14 +33,14 @@ time, mark, audio, video {
 }
 
 @font-face {
-    font-family: "Hasklug NFM", monospace;
+    font-family: "Hasklug Nerd Font Mono", monospace;
     src: url("/assets/fonts/Noto_Serif/Hasklug_NerdFont.otf");
     font-display: swap;
 }
 
 .sans-serif {font-family: "Cantarell", sans-serif;}
 .serif {font-family: "Noto Serif", serif;}
-.monospace {font-family: "Hasklug NFM", monospace;}
+.monospace {font-family: "Hasklug Nerd Font Mono", monospace;}
 
 :root {
     --background: #241f31;
