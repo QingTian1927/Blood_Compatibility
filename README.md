@@ -71,7 +71,7 @@ node server.js
 
 You should see the following message if everything goes well:
 ```
-[2024-02-16T04:32:12.318Z] Blood Compatibility listening on port {<PORT NUMBER>}
+[INIT] [2024-02-16T04:32:12.318Z] Blood Compatibility listening on port {<PORT NUMBER>}
 ```
 
 where `<PORT NUMBER>` could be any number, such as `4242` or `10000`.
