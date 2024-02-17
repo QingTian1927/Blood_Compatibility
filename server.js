@@ -38,15 +38,18 @@ app.use(limiter);
 app.get("/", (req, res) => {
     const page = getPublicPath("views/index.html");
     res.status(200).sendFile(page);
+    logEvent("HOME", humanTimestamp(), "Someone accessed the home page");
 })
 
 app.get("/info", (req, res) => {
     const page = getPublicPath("views/info.html");
     res.status(200).sendFile(page);
+    logEvent("INFO", humanTimestamp(), "Someone accessed the info page");
 })
 
 app.get("/healthcheck", (req, res) => {
     res.status(200).send("200 OK");
+    logEvent("HECK", humanTimestamp(), "Someone accessed the healthcheck path");
 })
 
 // * ------------------- * //
@@ -56,17 +59,16 @@ app.get("/healthcheck", (req, res) => {
 app.all("*", (req, res) => {
     const error404Page = getPublicPath("views/404.html");
     res.status(404).sendFile(error404Page);
+    logEvent("S404", humanTimestamp(), "Someone accessed an invalid resource");
 })
 
 // * --------------------- * //
 // * SERVER INITIALIZATION * //
 // * --------------------- * //
 
-// Potentially dangerous but I figure it's probably fine for this use case.
-initTime = 0;
 const server = app.listen(port, async () => {
-    initTime = humanTimestamp();
-    console.log(`[${initTime}] Blood Compatibility listening on port {${port}}`);
+    const initTime = humanTimestamp();
+    logEvent("INIT", initTime, `Blood Compatibility listening on port {${port}}`);
 })
 
 server.keepAliveTimeout = 120000  // 120 seconds
@@ -89,4 +91,8 @@ function getAbsPath(dir) {
 
 function humanTimestamp() {
     return new Date().toISOString();
+}
+
+function logEvent(eventCode, timestamp, message) {
+    console.log(`[${eventCode}] [${timestamp}] ${message}`);
 }
