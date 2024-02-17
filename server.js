@@ -49,7 +49,6 @@ app.get("/info", (req, res) => {
 
 app.get("/healthcheck", (req, res) => {
     res.status(200).send("200 OK");
-    logEvent("HECK", humanTimestamp(), "Someone accessed the healthcheck path");
 })
 
 // * ------------------- * //
