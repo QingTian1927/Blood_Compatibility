@@ -7,8 +7,11 @@
    viewBox="0 0 1080 1080"
    version="1.1"
    id="svg1"
-   sodipodi:docname="incompatible_blood.svg"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="incompatible_blood.svg"
+   inkscape:export-filename="../exports/Recipient_Blood/IncompatibleBlood_TypeAB_Light.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,29 +25,33 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="0.7462963"
-     inkscape:cx="539.33002"
-     inkscape:cy="540"
-     inkscape:window-width="1920"
-     inkscape:window-height="1014"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:document-units="px"
+     inkscape:zoom="0.52771117"
+     inkscape:cx="536.27821"
+     inkscape:cy="488.90381"
+     inkscape:window-width="948"
+     inkscape:window-height="998"
+     inkscape:window-x="35"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer6" />
   <defs
      id="defs1" />
   <g
-     id="layer6">
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Label">
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:120px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';text-align:center;text-anchor:middle;fill:#241f31;stroke-width:20;stroke-linejoin:round"
        x="539.46667"
        y="1038.8685"
        id="text1"><tspan
+         sodipodi:role="line"
          id="tspan1"
          x="539.46667"
          y="1038.8685"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold'">Nhóm A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;text-anchor:middle">Nhóm A</tspan></text>
     <circle
        style="fill:none;fill-opacity:1;stroke:#a51d2d;stroke-width:21.0223;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        id="path1"
@@ -62,24 +69,33 @@
        transform="matrix(0.68387958,0.72959491,-0.6348118,0.7726668,0,0)" />
   </g>
   <g
+     inkscape:groupmode="layer"
      id="layer5"
+     inkscape:label="Blood Disk"
      transform="matrix(0.89200154,0,0,0.89200154,58.319168,-12.727629)"
      style="display:inline">
     <g
+       inkscape:label="Disk Background"
+       inkscape:groupmode="layer"
        id="g2"
-       style="display:inline">
+       style="display:inline"
+       inkscape:highlight-color="#213ff3">
       <circle
          style="display:inline;fill:#f6f5f4;fill-opacity:1;stroke:none;stroke-width:9.34161;stroke-dasharray:none;stroke-opacity:1"
          id="circle1"
          cx="540"
          cy="540"
+         inkscape:label="disk"
          r="504.44678" />
     </g>
     <g
+       inkscape:groupmode="layer"
        id="layer2"
+       inkscape:label="Blood Cells"
        style="display:inline">
       <g
          id="g2-6"
+         inkscape:label="blood_cell"
          transform="translate(181.22266,424.37761)"
          style="display:inline">
         <circle
@@ -97,6 +113,7 @@
       </g>
       <g
          id="g2-44"
+         inkscape:label="blood_cell"
          transform="translate(271.98345,332.67486)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -113,6 +130,7 @@
       </g>
       <g
          id="g2-9"
+         inkscape:label="blood_cell"
          transform="translate(307.04157,463.18797)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -129,6 +147,7 @@
       </g>
       <g
          id="g2-0"
+         inkscape:label="blood_cell"
          transform="translate(212.49599,556.63323)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -145,6 +164,7 @@
       </g>
       <g
          id="g2-05"
+         inkscape:label="blood_cell"
          transform="translate(397.80255,363.9655)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -161,6 +181,7 @@
       </g>
       <g
          id="g2-89"
+         inkscape:label="blood_cell"
          transform="translate(518.17613,615.49531)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -177,6 +198,7 @@
       </g>
       <g
          id="g2-69"
+         inkscape:label="blood_cell"
          transform="translate(437.46699,724.21419)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -193,6 +215,7 @@
       </g>
       <g
          id="g2-60"
+         inkscape:label="blood_cell"
          transform="translate(478.96941,850.03329)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -209,6 +232,7 @@
       </g>
       <g
          id="g2-75"
+         inkscape:label="blood_cell"
          transform="translate(283.95565,1026.641)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -225,6 +249,7 @@
       </g>
       <g
          id="g2-52"
+         inkscape:label="blood_cell"
          transform="translate(618.88185,517.54741)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -241,6 +266,7 @@
       </g>
       <g
          id="g2-09"
+         inkscape:label="blood_cell"
          transform="translate(646.60485,652.75453)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -257,6 +283,7 @@
       </g>
       <g
          id="g2-35"
+         inkscape:label="blood_cell"
          transform="translate(565.69131,755.18767)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -273,6 +300,7 @@
       </g>
       <g
          id="g2-892"
+         inkscape:label="blood_cell"
          transform="translate(691.13173,778.57363)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -289,6 +317,7 @@
       </g>
       <g
          id="g2-892-2"
+         inkscape:label="blood_cell"
          transform="translate(816.95083,832.93307)"
          style="display:inline">
         <circle
@@ -306,6 +335,7 @@
       </g>
       <g
          id="g2-90"
+         inkscape:label="blood_cell"
          transform="translate(326.34289,638.21689)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -322,6 +352,7 @@
       </g>
       <g
          id="g2-34"
+         inkscape:label="blood_cell"
          transform="translate(383.10755,942.24857)">
         <circle
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -337,7 +368,8 @@
            r="54.35944" />
       </g>
       <g
-         id="g13">
+         id="g13"
+         inkscape:label="blood_cell">
         <path
            id="path13"
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -349,6 +381,7 @@
       </g>
       <g
          id="g21"
+         inkscape:label="blood_cell"
          style="display:inline">
         <path
            id="path20"
@@ -360,7 +393,8 @@
            d="m 293.24023,978.54492 a 504.44678,504.44678 0 0 0 52.54688,26.03908 54.35944,54.35944 0 0 0 48.36133,-53.9297 54.35944,54.35944 0 0 0 -54.35938,-54.35938 54.35944,54.35944 0 0 0 -54.35937,54.35938 54.35944,54.35944 0 0 0 7.81054,27.89062 z" />
       </g>
       <g
-         id="g22">
+         id="g22"
+         inkscape:label="blood_cell">
         <path
            id="path22"
            style="fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:5"
@@ -374,19 +408,24 @@
       </g>
     </g>
     <g
+       inkscape:label="Disk"
+       inkscape:groupmode="layer"
        id="layer1"
-       style="display:inline">
+       style="display:inline"
+       inkscape:highlight-color="#213ff3">
       <circle
          style="display:inline;fill:none;fill-opacity:1;stroke:#241f31;stroke-width:9.34161;stroke-dasharray:none;stroke-opacity:1"
          id="path3"
          cx="540"
          cy="540"
+         inkscape:label="disk"
          r="504.44678" />
       <circle
          style="display:none;fill:#c01c28;fill-opacity:1;stroke:none;stroke-width:9.34161;stroke-dasharray:none;stroke-opacity:1"
          id="path3-5"
          cx="540"
          cy="540"
+         inkscape:label="cutter_disk"
          r="504.44678" />
     </g>
   </g>
