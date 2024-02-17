@@ -52,6 +52,6 @@
     background-color: var(--highlight);
 }
 
-.titleCard {text-align: center; max-width: 90%;}
+.titleCard {text-align: center;}
 
 .bloodTypeContainer hr {border: none;}

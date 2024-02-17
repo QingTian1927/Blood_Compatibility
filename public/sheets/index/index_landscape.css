@@ -7,5 +7,5 @@
 .bloodTypeContainer hr {display: none;}
 .bloodTray {height: 90%;}
 
-.titleCard {font-size: 5vh;}
+.titleCard {font-size: 5vh; max-width: 70%;}
 .bloodTypeHeader {font-size: 2.5vh;}
