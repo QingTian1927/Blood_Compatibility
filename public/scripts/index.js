@@ -1,11 +1,5 @@
 import { lazyGetID } from "./master.js";
 import { lazyQuery } from "./master.js";
-import { openSameTab } from "./master.js";
-
-const infoButton = lazyGetID("infoButton");
-infoButton.addEventListener("click", () => {
-    openSameTab("/info");
-});
 
 const EMPTY_CURSOR = "Empty";
 const EMPTY_INVALID_CURSOR = "EmptyInvalid";

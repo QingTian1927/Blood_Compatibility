@@ -4,13 +4,13 @@
 
 .titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
 .resetButtonContainer, .bloodTypeContainer, .infoContainer,
-.currentTypeContainer {
+.infoButton, .currentTypeContainer {
     display: flex; align-items: center;
 }
 .bloodTypeContainer {justify-content: space-evenly;}
 .infoContainer {justify-content: flex-end;}
 .titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
-.resetButtonContainer, .currentTypeContainer
+.resetButtonContainer, .infoButton, .currentTypeContainer
 {justify-content: center;}
 
 .bloodItem, .infoButton, .resetButton, .bloodTray, .infoButton, .currentTypeContainer {width: auto;}
@@ -24,7 +24,7 @@
     text-align: center; font-weight: bold;
     color: var(--foreground); background-color: var(--accent);
 }
-.infoButton, .bloodTray {display: inline-block;}
+.bloodTray {display: inline-block;}
 .infoButton, .resetButton {cursor: pointer; border: none;}
 .currentTypeContainer, .currentTypeLabel {cursor: help;}
 
@@ -35,6 +35,7 @@
     border-radius: 100%;
     font-size: 1.75vh;
 }
+.infoLink {text-decoration: none;}
 
 .resetButton {
     height: 50%;

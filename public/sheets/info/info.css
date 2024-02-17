@@ -51,3 +51,5 @@
 }
 
 .sectionHeading {color: var(--accent); text-transform: uppercase;}
+
+.homeLink {text-decoration: none;}

@@ -21,14 +21,13 @@
     <link rel="stylesheet" href="/sheets/info/info.css">
     <link rel="stylesheet" href="/sheets/info/info_landscape.css" media="screen and (orientation:landscape)">
     <link rel="stylesheet" href="/sheets/info/info_portrait.css" media="screen and (orientation:portrait)">
-    <script type="module" src="/scripts/info.js"></script>
-    <noscript>Vui lòng bật JavaScript để sử dụng các chức năng cơ bản</noscript>
 </head>
 <body>
-    <div class="titleContainer sans-serif" id="titleContainer"
-    title="Quay trở lại trang chủ">
-        <h1 class="mainTitle">Công Cụ Kiểm Tra Các Nhóm Máu Tương Thích Trong Truyền Máu Ở Người</h1>
-    </div>
+    <a href="/" class="homeLink">
+        <div class="titleContainer sans-serif" title="Quay trở lại trang chủ">
+            <h1 class="mainTitle">Công Cụ Kiểm Tra Các Nhóm Máu Tương Thích Trong Truyền Máu Ở Người</h1>
+        </div>
+    </a>
 
     <div class="sectionContainer serif">
         <div class="sectionHeadingContainer sans-serif">
@@ -319,10 +318,11 @@
     </div>
 
     <div class="returnButtonContainer sans-serif">
-        <button type="button" class="returnButton" id="returnButton"
-        title="Quay trở lại trang chủ">
-            Quay lại trang chủ
-        </button>
+        <a href="/" class="homeLink">
+            <div class="returnButton" title="Quay trở lại trang chủ">
+                Quay lại trang chủ
+            </div>
+        </a>
     </div>
 </body>
 </html>
