@@ -51,6 +51,12 @@ app.get("/healthcheck", (req, res) => {
     res.status(200).send("200 OK");
 })
 
+// ? Could this potentially be a troublesome route?
+app.get("/separateLog", (req, res) => {
+    logEvent("SLOG", humanTimestamp(), " ");
+    res.status(200).send("200 OK");
+})
+
 // * ------------------- * //
 // * 404 CATCH-ALL ROUTE * //
 // * ------------------- * //
@@ -58,7 +64,7 @@ app.get("/healthcheck", (req, res) => {
 app.all("*", (req, res) => {
     const error404Page = getPublicPath("views/404.html");
     res.status(404).sendFile(error404Page);
-    logEvent("S404", humanTimestamp(), "Someone accessed an invalid resource");
+    logEvent("S404", humanTimestamp(), "Someone accessed a 404 resource");
 })
 
 // * --------------------- * //
