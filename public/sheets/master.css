@@ -38,12 +38,11 @@ time, mark, audio, video {
     font-style: normal;
 }
 
-
 :root {
     --background: #241f31;
     --foreground: #f6f5f4;
     --highlight: #c0bfbc;
-    --disabled: #5e5c64;
+    --selection: #99c1f1;
     --accent: #a51d2d;
 }
 .accented {color: var(--accent);}
@@ -52,5 +51,8 @@ body {
     background-color: var(--foreground);
     color: var(--background);
 }
+
+::-moz-selection {background-color: var(--selection);}
+::selection {background-color: var(--selection);}
 
 .viewport {height: 100vh; width: 100vw;}
