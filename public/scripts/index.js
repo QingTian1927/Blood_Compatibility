@@ -59,27 +59,6 @@ function showTypeNotification(notificationObj) {
 }
 showTypeNotification(notificationIcon);
 
-bloodBagTypeA.addEventListener("click", () => {
-    selectedType = "A";
-    setBloodBagCursor(bloodBagTypeA);
-    showTypeNotification(notificationIcon);
-});
-bloodBagTypeB.addEventListener("click", () => {
-    selectedType = "B";
-    setBloodBagCursor(bloodBagTypeB);
-    showTypeNotification(notificationIcon);
-});
-bloodBagTypeO.addEventListener("click", () => {
-    selectedType = "O";
-    setBloodBagCursor(bloodBagTypeO);
-    showTypeNotification(notificationIcon);
-})
-bloodBagTypeAB.addEventListener("click", () => {
-    selectedType = "AB";
-    setBloodBagCursor(bloodBagTypeAB);
-    showTypeNotification(notificationIcon);
-});
-
 bloodBagTypeA.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeA); });
 bloodBagTypeB.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeB); });
 bloodBagTypeO.addEventListener("mouseover", () => { setBloodBagCursor(bloodBagTypeO); });
@@ -99,16 +78,25 @@ function createBloodType(typeLabel, compatibleTypes) {
 function setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj) {
     const image = lazyQuery(recipientBloodTrayObj, "img");
     const bloodType = associatedBloodTypeObj.type;
+    let altText = "";
 
     if (associatedBloodTypeObj.state == "normal") {
         image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Type${bloodType}_Light.svg`;
-        image.alt = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
-        recipientBloodTrayObj.title = `Nhóm máu ${bloodType} trong tình trạng bình thường`;
+        altText = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
+        image.alt = altText;
+        recipientBloodTrayObj.title = altText;
+    }
+    else if (associatedBloodTypeObj.state == "compatible") {
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBloodLocked_Type${bloodType}_Light.svg`;
+        altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu tương thích`;
+        image.alt = altText
+        recipientBloodTrayObj.title = altText;
     }
     else if (associatedBloodTypeObj.state == "incompatible") {
         image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Type${bloodType}_Light.svg`;
-        image.alt = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
-        recipientBloodTrayObj.title = `Nhóm máu ${bloodType} khi trộn với nhóm máu không tương thích`;
+        altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
+        image.alt = altText
+        recipientBloodTrayObj.title = altText;
     }
 }
 
@@ -118,10 +106,10 @@ function mixBlood(donorBloodType, recipientBloodObj) {
 
     if (isMixed) { return; }
     if (isCompatibleType) {
-        recipientBloodObj.state = "normal";
-        return;
+        recipientBloodObj.state = "compatible";
+    } else {
+        recipientBloodObj.state = "incompatible";
     }
-    recipientBloodObj.state = "incompatible";
     recipientBloodObj.isMixed = true;
 }
 
@@ -187,8 +175,7 @@ function resetBloodObj(bloodObj) {
     bloodObj.state = "normal";
 }
 
-const resetButton = lazyGetID("resetButton");
-resetButton.addEventListener("click", () => {
+function resetAllBloodObj() {
     selectedType = " ";
     showTypeNotification(notificationIcon);
     resetBloodObj(bloodObjTypeA);
@@ -199,4 +186,44 @@ resetButton.addEventListener("click", () => {
     setRecipientBloodImg(recipientTypeB, bloodObjTypeB);
     setRecipientBloodImg(recipientTypeO, bloodObjTypeO);
     setRecipientBloodImg(recipientTypeAB, bloodObjTypeAB);
+}
+
+const resetButton = lazyGetID("resetButton");
+resetButton.addEventListener("click", () => { resetAllBloodObj(); });
+
+function resetIfDifferentType(bloodType) {
+    if (bloodType === selectedType || selectedType === " ") {
+        return;
+    }
+    resetAllBloodObj();
+}
+
+function setSelectedBloodType(newBloodType) {
+    resetIfDifferentType(newBloodType);
+    selectedType = newBloodType;
+}
+
+bloodBagTypeA.addEventListener("click", () => {
+    const newBloodType = "A";
+    setSelectedBloodType(newBloodType);
+    setBloodBagCursor(bloodBagTypeA);
+    showTypeNotification(notificationIcon);
+});
+bloodBagTypeB.addEventListener("click", () => {
+    const newBloodType = "B";
+    setSelectedBloodType(newBloodType);
+    setBloodBagCursor(bloodBagTypeB);
+    showTypeNotification(notificationIcon);
+});
+bloodBagTypeO.addEventListener("click", () => {
+    const newBloodType = "O";
+    setSelectedBloodType(newBloodType);
+    setBloodBagCursor(bloodBagTypeO);
+    showTypeNotification(notificationIcon);
+})
+bloodBagTypeAB.addEventListener("click", () => {
+    const newBloodType = "AB";
+    setSelectedBloodType(newBloodType);
+    setBloodBagCursor(bloodBagTypeAB);
+    showTypeNotification(notificationIcon);
 });
