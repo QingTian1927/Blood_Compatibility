@@ -20,27 +20,24 @@ time, mark, audio, video {
 }
 /* Reset all elements */
 
-@font-face {
-    font-family: "Cantarell", sans-serif;
-    src: url("/assets/fonts/Cantarell/Cantarell-Regular.ttf");
-    font-display: swap;
+.sans-serif {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+.serif {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.monospace, code {
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 
-@font-face {
-    font-family: "Noto Serif", serif;
-    src: url("/assets/fonts/Noto_Serif/NotoSerif-Regular.ttf");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Hasklug Nerd Font Mono", monospace;
-    src: url("/assets/fonts/Noto_Serif/Hasklug_NerdFont.otf");
-    font-display: swap;
-}
-
-.sans-serif {font-family: "Cantarell", sans-serif;}
-.serif {font-family: "Noto Serif", serif;}
-.monospace {font-family: "Hasklug Nerd Font Mono", monospace;}
 
 :root {
     --background: #241f31;
