@@ -71,23 +71,25 @@ function createBloodType(typeLabel, compatibleTypes) {
 // God helps my naming scheme.
 function setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj) {
     const image = lazyQuery(recipientBloodTrayObj, "img");
+    const label = lazyQuery(recipientBloodTrayObj, "strong");
     const bloodType = associatedBloodTypeObj.type;
     let altText = "";
 
+    label.innerHTML = `Nhóm ${bloodType}`;
     if (associatedBloodTypeObj.state == "normal") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Type${bloodType}_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Light.svg`;
         altText = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
         image.alt = altText;
         recipientBloodTrayObj.title = altText;
     }
     else if (associatedBloodTypeObj.state == "compatible") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBloodLocked_Type${bloodType}_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBloodLocked_Light.svg`;
         altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu tương thích`;
         image.alt = altText
         recipientBloodTrayObj.title = altText;
     }
     else if (associatedBloodTypeObj.state == "incompatible") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Type${bloodType}_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Light.svg`;
         altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
         image.alt = altText
         recipientBloodTrayObj.title = altText;
@@ -99,18 +101,13 @@ function mixBlood(donorBloodType, recipientBloodObj) {
     let isMixed = recipientBloodObj.isMixed;
 
     if (isMixed) { return; }
-    if (isCompatibleType) {
-        recipientBloodObj.state = "compatible";
-    } else {
-        recipientBloodObj.state = "incompatible";
-    }
+    if (isCompatibleType) { recipientBloodObj.state = "compatible"; }
+    else { recipientBloodObj.state = "incompatible"; }
     recipientBloodObj.isMixed = true;
 }
 
 function bloodMixer(recipientBloodTrayObj, associatedBloodTypeObj) {
-    if (selectedType !== " ") {
-        mixBlood(selectedType, associatedBloodTypeObj);
-    }
+    if (selectedType !== " ") { mixBlood(selectedType, associatedBloodTypeObj); }
     setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj);
 }
 
@@ -186,9 +183,7 @@ const resetButton = lazyGetID("resetButton");
 resetButton.addEventListener("click", () => { resetAllBloodObj(); });
 
 function resetIfDifferentType(bloodType) {
-    if (bloodType === selectedType || selectedType === " ") {
-        return;
-    }
+    if (bloodType === selectedType || selectedType === " ") { return; }
     resetAllBloodObj();
 }
 
