@@ -136,7 +136,7 @@ _Figure 3.1: The mouse cursor when hovered over the rest button_
 After clicking on the **Reset** button, the page will be restored to its initial state, just like when we open the page for the first time.
 
 # Credits
-Apart from third-party libraries in its code base, Quynhbio's Interactive Blood Compatibility Checker also used some assets from third-party sources, all of which will be listed in the following section:
+Apart from third-party libraries in its code base, Quynhbio's Interactive Blood Compatibility Checker also uses some assets from third-party sources, all of which will be listed in the following section:
 
 * The blood syringe cursor was modified from the `Green syringe element vector` by `rawpixel.com` on [Freepik](https://www.freepik.com/free-vector/green-syringe-element-vector_18722102.htm#query=Green%20syringe%20element%20vector&position=10&from_view=search&track=ais&uuid=f56c1b4a-9ccd-4f33-9e3a-6b5c1ace3d64)
 
