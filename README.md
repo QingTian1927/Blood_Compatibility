@@ -1,6 +1,8 @@
 Quynhbio's Interactive Blood Compatibility Checker
 ==================================================
 
+[Vietnamese Version](docs/README_VI.md)
+
 An interactive tool to learn about basic blood type compatibility, for educational purposes only.
 
 This website was originally created at the request of my mother. Since this is a hobbyist project in nature, it is very basic in terms of features. Nevertheless, designing the entire website from scratch was a very valuable learning experience for me.
@@ -60,12 +62,12 @@ git clone https://github.com/QingTian1927/Quynhbio-s-Interactive-Blood-Compatibi
 ```
 
 Afterwards, `cd` to the cloned directory and install the `npm` dependencies.
-```
+``` sh
 npm install
 ```
 
 If `npm` successfully sets up the Node.js environment, simply launch the server with the following command:
-```
+``` sh
 node server.js
 ```
 
