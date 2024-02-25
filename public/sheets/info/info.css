@@ -15,9 +15,9 @@
 
 .titleContainer, .returnButton {
     cursor: pointer;
-    color: var(--foreground); background-color: var(--accent);
+    color: var(--background); background-color: var(--accent);
 }
-.titleContainer:hover, .returnButton:hover {color: var(--background); background-color: var(--highlight);}
+.titleContainer:hover, .returnButton:hover {color: var(--foreground); background-color: var(--highlight);}
 
 .sectionContainer {padding-top: 1vh; padding-bottom: 1vh;}
 .subHeadingContainer, .h2Paragraph, .h3Paragraph{margin-top: 2vh; margin-bottom: 2vh;}

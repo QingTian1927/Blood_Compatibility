@@ -2,27 +2,39 @@
 .titleContainer, .bloodContainer, .resetButtonContainer
 {position: relative; width: 100vw;}
 
-.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
-.resetButtonContainer, .bloodTypeContainer, .infoContainer,
+.titleContainer, .bloodTypeHeaderContainer, .bloodBagContainer, .recipientBloodContainer,
+.recipientLabelContainer, .resetButtonContainer, .bloodTypeContainer, .infoContainer,
 .infoButton, .currentTypeContainer {
     display: flex; align-items: center;
 }
 .bloodTypeContainer {justify-content: space-evenly;}
 .infoContainer {justify-content: flex-end;}
-.titleContainer, .bloodTypeHeaderContainer, .bloodItemContainer,
-.resetButtonContainer, .infoButton, .currentTypeContainer
+.titleContainer, .bloodTypeHeaderContainer, .bloodBagContainer, .recipientBloodContainer,
+.recipientLabelContainer, .resetButtonContainer, .infoButton, .currentTypeContainer
 {justify-content: center;}
 
 .bloodItem, .infoButton, .resetButton, .bloodTray, .infoButton, .currentTypeContainer {width: auto;}
 .bloodItem, .infoButton, .bloodTray, .infoButton, .currentTypeContainer {aspect-ratio: 1/1;}
 .resetButton {aspect-ratio: 3/1;}
 
-.bloodItemContainer {height: 100%; width: 100%;}
-.bloodItem {max-height: 90%;}
+.bloodBagContainer, .recipientBloodContainer {height: 100%; width: 100%;}
+
+.bloodBagContainer {.bloodItem {max-height: 90%;}}
+.recipientBloodContainer {
+    flex-direction: column;
+    .bloodItem {
+        max-height: 75%;
+        position: relative;
+}}
+
+.recipientLabelContainer {
+    position: relative;
+    height: 15%; width: 100%;
+}
 
 .infoButton, .resetButton, .currentTypeContainer {
     text-align: center; font-weight: bold;
-    color: var(--foreground); background-color: var(--accent);
+    color: var(--background); background-color: var(--accent);
 }
 .bloodTray {display: inline-block;}
 .infoButton, .resetButton {cursor: pointer; border: none;}
@@ -49,7 +61,7 @@
 }
 
 .infoButton:hover, .resetButton:hover, .bloodTray:hover {
-    color: var(--background);
+    color: var(--foreground);
     background-color: var(--highlight);
 }
 

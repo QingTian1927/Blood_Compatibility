@@ -5,6 +5,8 @@ Công Cụ Kiểm Tra Các Nhóm Máu Tương Thích Trong Truyền Máu Ở Ng�
 
 Công cụ tương tác để tìm hiểu về sự tương thích giữa những nhóm máu cơ bản với nhau; chỉ nhằm cho mục đích giáo dục.
 
+Trang web này ban đầu được tạo ra theo yêu cầu của mẹ tôi. Bởi vì đây là một dự án sở thích cá nhân, về mặt chức năng thì nó khá đơn giản. Tuy nhiên, việc tự thiết kế nên toàn bộ trang web này đã mang lại cho tôi nhiều kinh nghiệm học hỏi quý giá.
+
 # Mục Lục
 1. [Công Nghệ](#công-nghệ)
 1. [Khởi Chạy Từ Mã Nguồn](#khởi-chạy-từ-mã-nguồn)

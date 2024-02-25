@@ -5,6 +5,8 @@ Quynhbio's Interactive Blood Compatibility Checker
 
 An interactive tool to learn about basic blood type compatibility, for educational purposes only.
 
+This website was originally created at the request of my mother. Since this is a hobbyist project in nature, it is very basic in terms of features. Nevertheless, designing the entire website from scratch was a very valuable learning experience for me.
+
 # Table of Contents
 1. [Technology](#technology)
 1. [Running From Source](#running-from-source)
