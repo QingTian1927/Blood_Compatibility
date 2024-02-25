@@ -1,6 +1,12 @@
 import { lazyGetID } from "./master.js";
 import { lazyQuery } from "./master.js";
 
+let theme = "Light";
+
+// Detects preferred theme on launch
+const isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+theme = isDarkTheme ? "Dark" : "Light";
+
 const EMPTY_CURSOR = "Empty";
 const EMPTY_INVALID_CURSOR = "EmptyInvalid";
 const HALF_FULL_CURSOR = "HalfFull";
@@ -8,15 +14,15 @@ const HALF_FULL_INVALID_CURSOR = "HalfFullInvalid";
 
 function setBloodSyringeCursor(bloodTrayObj, cursorType) {
     bloodTrayObj.style.cursor = (
-        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.svg'), ` +
-        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}.png'), ` +
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}_${theme}.svg'), ` +
+        `url('/assets/graphics/exports/Blood_Syringe/BloodSyringe_32x32_${cursorType}_${theme}.png'), ` +
         "pointer"
     );
 }
 
 function setBloodBagImg(bloodBagObj, bloodType) {
     const image = lazyQuery(bloodBagObj, "img");
-    image.src = `/assets/graphics/exports/Blood_Bag/BloodBag_Type${bloodType}.svg`;
+    image.src = `/assets/graphics/exports/Blood_Bag/BloodBag_Type${bloodType}_${theme}.svg`;
     image.alt = `Minh họa túi đựng máu chứa nhóm máu ${bloodType}`;
     bloodBagObj.title = `Người cho nhóm máu ${bloodType}`
 }
@@ -37,7 +43,7 @@ const bloodBagTypeAB = lazyGetID("bloodBagTypeAB");
 setBloodBagImg(bloodBagTypeA, "A");
 setBloodBagImg(bloodBagTypeB, "B");
 setBloodBagImg(bloodBagTypeO, "O");
-setBloodBagImg(bloodBagTypeAB, "AB")
+setBloodBagImg(bloodBagTypeAB, "AB");
 
 let selectedType = " ";
 const notificationIcon = lazyGetID("notificationIcon");
@@ -77,19 +83,19 @@ function setRecipientBloodImg(recipientBloodTrayObj, associatedBloodTypeObj) {
 
     label.innerHTML = `Nhóm ${bloodType}`;
     if (associatedBloodTypeObj.state == "normal") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBlood_${theme}.svg`;
         altText = `Minh họa máu nhóm ${bloodType} trong tình trạng bình thường`;
         image.alt = altText;
         recipientBloodTrayObj.title = altText;
     }
     else if (associatedBloodTypeObj.state == "compatible") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBloodLocked_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/NormalBloodLocked_${theme}.svg`;
         altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu tương thích`;
         image.alt = altText
         recipientBloodTrayObj.title = altText;
     }
     else if (associatedBloodTypeObj.state == "incompatible") {
-        image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_Light.svg`;
+        image.src = `/assets/graphics/exports/Recipient_Blood/IncompatibleBlood_${theme}.svg`;
         altText = `Minh họa máu nhóm ${bloodType} khi trộn với nhóm máu không tương thích`;
         image.alt = altText
         recipientBloodTrayObj.title = altText;
@@ -215,4 +221,20 @@ bloodBagTypeAB.addEventListener("click", () => {
     setSelectedBloodType(newBloodType);
     setBloodBagCursor(bloodBagTypeAB);
     showTypeNotification(notificationIcon);
+});
+
+// Detects changes in preferred theme.
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    theme = e.matches ? "Dark" : "Light";
+
+    // Changes all blood illustrations
+    setBloodBagImg(bloodBagTypeA, "A");
+    setBloodBagImg(bloodBagTypeB, "B");
+    setBloodBagImg(bloodBagTypeO, "O");
+    setBloodBagImg(bloodBagTypeAB, "AB");
+
+    setRecipientBloodImg(recipientTypeA, bloodObjTypeA);
+    setRecipientBloodImg(recipientTypeB, bloodObjTypeB);
+    setRecipientBloodImg(recipientTypeO, bloodObjTypeO);
+    setRecipientBloodImg(recipientTypeAB, bloodObjTypeAB);
 });
